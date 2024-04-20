@@ -17,13 +17,12 @@ namespace WPFCalculator
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void click_button(object sender, EventArgs e)
         {
+            if (resultBox.Text == "0")
+            {
+                resultBox.Clear();
+            }
             Button button = (Button)sender;
             resultBox.Text = resultBox.Text + button.Text;
         }
