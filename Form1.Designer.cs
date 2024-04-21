@@ -42,7 +42,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.equalBtn = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.resultBox = new System.Windows.Forms.TextBox();
@@ -205,17 +205,17 @@
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.click_button);
             // 
-            // button10
+            // equalBtn
             // 
-            this.button10.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(213, 234);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(95, 50);
-            this.button10.TabIndex = 14;
-            this.button10.Text = "=";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.click_button);
+            this.equalBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.equalBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.equalBtn.Location = new System.Drawing.Point(213, 234);
+            this.equalBtn.Name = "equalBtn";
+            this.equalBtn.Size = new System.Drawing.Size(95, 50);
+            this.equalBtn.TabIndex = 14;
+            this.equalBtn.Text = "=";
+            this.equalBtn.UseVisualStyleBackColor = false;
+            this.equalBtn.Click += new System.EventHandler(this.equalBtn_Click);
             // 
             // button11
             // 
@@ -273,7 +273,7 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.resultBox);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.button10);
+            this.Controls.Add(this.equalBtn);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.btn2);
@@ -314,7 +314,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button equalBtn;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.TextBox resultBox;
