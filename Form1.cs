@@ -12,6 +12,9 @@ namespace WPFCalculator
 {
     public partial class Form1 : Form
     {
+        Double resultValue = 0;
+        string operatorClicked = "";
+
         public Form1()
         {
             InitializeComponent();
@@ -25,6 +28,18 @@ namespace WPFCalculator
             }
             Button button = (Button)sender;
             resultBox.Text = resultBox.Text + button.Text;
+        }
+
+        private void operator_click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            operatorClicked = button.Text;
+            resultValue = Double.Parse(resultBox.Text);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            resultBox.Clear();
         }
     }
 }

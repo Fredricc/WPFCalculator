@@ -71,7 +71,7 @@
             this.btnDivision.TabIndex = 1;
             this.btnDivision.Text = "÷";
             this.btnDivision.UseVisualStyleBackColor = false;
-            this.btnDivision.Click += new System.EventHandler(this.click_button);
+            this.btnDivision.Click += new System.EventHandler(this.operator_click);
             // 
             // btn9
             // 
@@ -131,7 +131,7 @@
             this.button3.TabIndex = 5;
             this.button3.Text = "×";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.click_button);
+            this.button3.Click += new System.EventHandler(this.operator_click);
             // 
             // btn4
             // 
@@ -179,7 +179,7 @@
             this.button7.TabIndex = 9;
             this.button7.Text = "-";
             this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.click_button);
+            this.button7.Click += new System.EventHandler(this.operator_click);
             // 
             // btn1
             // 
@@ -227,7 +227,7 @@
             this.button11.TabIndex = 13;
             this.button11.Text = "+";
             this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.click_button);
+            this.button11.Click += new System.EventHandler(this.operator_click);
             // 
             // button12
             // 
@@ -262,6 +262,7 @@
             this.btnClear.TabIndex = 17;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // Form1
             // 
