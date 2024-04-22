@@ -14,6 +14,7 @@ namespace WPFCalculator
     {
         Double resultValue = 0;
         string operatorClicked = "";
+        bool isOperatorClicked = false;
 
         public Form1()
         {
@@ -22,24 +23,50 @@ namespace WPFCalculator
 
         private void click_button(object sender, EventArgs e)
         {
-            if (resultBox.Text == "0")
+            if (resultBox.Text == "0" || (isOperatorClicked))
             {
                 resultBox.Clear();
             }
+
+            isOperatorClicked = false;
             Button button = (Button)sender;
-            resultBox.Text = resultBox.Text + button.Text;
+
+            if (button.Text == ".")
+            {
+                if (!resultBox.Text.Contains("."))
+                    resultBox.Text = resultBox.Text + button.Text;
+            }
+            else
+            {
+                resultBox.Text = resultBox.Text + button.Text;
+            }
         }
 
         private void operator_click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            operatorClicked = button.Text;
-            resultValue = Double.Parse(resultBox.Text);
+            if(resultValue != 0)
+            {
+                equalBtn.PerformClick();
+                operatorClicked = button.Text;
+                labelCurrentOperation.Text = resultValue + " " + operatorClicked;
+                isOperatorClicked = true;
+            }
+            else
+            {
+
+                operatorClicked = button.Text;
+                resultValue = Double.Parse(resultBox.Text);
+                labelCurrentOperation.Text = resultValue + " " + operatorClicked;
+                isOperatorClicked = true;
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            resultBox.Clear();
+            resultBox.Text = "0";
+            labelCurrentOperation.Text= "";
+            resultValue = 0;
         }
 
         private void equalBtn_Click(object sender, EventArgs e)
@@ -47,16 +74,25 @@ namespace WPFCalculator
             switch(operatorClicked)
             {
                 case "+":
-                    resultBox.Text = (resultValue + Double.Parse(resultBox.Text)).ToString(); break;
+                    resultBox.Text = (resultValue + Double.Parse(resultBox.Text)).ToString(); 
+                    break;
                 case "-":
-                    resultBox.Text = (resultValue - Double.Parse(resultBox.Text)).ToString(); break;
-                case "x":
+                    resultBox.Text = (resultValue - Double.Parse(resultBox.Text)).ToString(); 
+                    break;
+                case "×":
                     resultBox.Text = (resultValue *  Double.Parse(resultBox.Text)).ToString(); break;
                 case "÷":
                     resultBox.Text = (resultValue / Double.Parse(resultBox.Text)).ToString(); break;
                 default:
                     break;
             }
+            resultValue = Double.Parse(resultBox.Text);
+            labelCurrentOperation.Text = "";
+        }
+
+        private void k(object sender, EventArgs e)
+        {
+
         }
     }
 }
